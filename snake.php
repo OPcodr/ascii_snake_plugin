@@ -28,17 +28,7 @@ if(! class_exists('ascii_snake')){
         function snake(){
             wp_enqueue_script('snake_js',SNAKE_PLUGIN_PATH."/snake/script.js", ['jquery']);
             wp_enqueue_style('snake_css',SNAKE_PLUGIN_PATH."/snake/style.css");
-            $snakehtml = '
-            <html>
-                <head>
-
-                </head>
-                <body>
-                    <div id="box"></div>
-                    <div id="fail"></div>
-                </body>
-            </html>
-            ';
+            $snakehtml = $snakehtml = file_get_contents("https://owenpalmer.com/wp-content/plugins/ascii_snake/snakecontent.html");
             return $snakehtml;
         }
 
